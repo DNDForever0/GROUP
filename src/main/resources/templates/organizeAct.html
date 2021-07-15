@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>组织活动</title>
+    <link href="css(1)/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js(1)/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="css(1)/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!---->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+
+    <link href="css(1)/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css(1)/component.css" />
+    <!-- animation-effect -->
+    <link href="css(1)/animate.min.css" rel="stylesheet">
+    <script src="js(1)/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- //animation-effect -->
+    <link href="css/modal1.css" rel="stylesheet">
+    <link href="css/modal2.css" rel="stylesheet">
+    <link href="css/modal3.css" rel="stylesheet">
+</head>
+<body>
+<div class="header head">
+    <div class="container">
+        <div class="logo animated wow pulse" data-wow-duration="1000ms" data-wow-delay="500ms">
+            <h1><a href="">拼团活动</a></h1>
+        </div>
+        <div class="nav-icon">
+            <a href="#" class="navicon"></a>
+            <div class="toggle">
+                <ul class="toggle-menu">
+                    <li><a  href="index.html">主页</a></li>
+                    <li><a  href="menu.html">Menu</a></li>
+                    <li><a   href="blog.html">Blog</a></li>
+                    <li><a class="active" href="typo.html">Codes</a></li>
+                    <li><a  href="events.html">Events</a></li>
+                    <li><a  href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <script>
+                $('.navicon').on('click', function (e) {
+                    e.preventDefault();
+                    $(this).toggleClass('navicon--active');
+                    $('.toggle').toggleClass('toggle--active');
+                });
+            </script>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- start search-->
+</div>
+
+<div class="container wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+    <div class="page">
+        <div class="menu-top">
+            <div class="col-md-4 menu-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <h3>组织活动</h3>
+                <label><i class="glyphicon glyphicon-menu-up"></i></label>
+                <span>Organize Activities</span>
+            </div>
+            <div class="col-md-8 menu-right animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+            </div>
+        </div>
+    </div>
+    <div class="page-header"></div>
+    <form class="form-horizontal" th:action="@{/addActivity}">
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">活动编号</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputEmail2" placeholder="请输入团队编号"  name="activityID">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">团队编号</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputEmail3" placeholder="请输入团队编号"  name="groupID">
+            </div>
+        </div>
+        <div class="col-md-12" style="margin-top: 20px"></div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">活动名称</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPassword3" placeholder="请输入活动名称" name="actName">
+            </div>
+        </div>
+        <div class="col-md-12" style="margin-top: 20px"></div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">活动花费总价</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputPassword" placeholder="请输入活动花费总价" name="fee">
+            </div>
+        </div>
+        <div class="col-md-12" style="margin-top: 20px"></div>
+        <div class="form-group" style="margin-left: 10px">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-info">确认组织活动</button>
+            </div>
+        </div>
+        <div class="alert alert-info" role="alert">
+            <strong>Heads up!</strong> 这里随便写点什么东西。组织活动
+        </div>
+    </form>
+</div>
+<div class="page"></div>
+<div class="footer">
+    <div class="container">
+        <div class="footer-head">
+            <div class="col-md-8 footer-top animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <ul class=" in">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a  href="">Menu</a></li>
+                    <li><a  href="">Blog</a></li>
+                    <li><a  href="">Events</a></li>
+                    <li><a  href="">Contact</a></li>
+                </ul>
+                <span>There are many variations of passages</span>
+            </div>
+            <div class="clearfix"> </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

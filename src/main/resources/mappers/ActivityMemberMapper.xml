@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.ActivityMemberMapper">
+    <select id="queryActivityMember" resultType="ActivityMember">
+    select * from activitymember
+  </select>
+
+    <select id="queryActivityMemberByActor" resultType="ActivityMember">
+    select * from activitymember where actor=#{actor}
+  </select>
+
+
+    <insert id="addACTMember" parameterType="ActivityMember">
+insert into activitymember(groupID,actName,fee,actor)values(#{groupID},#{actName},#{fee},#{actor})
+    </insert>
+    <delete id="deleteACTMember" parameterType="ActivityMember">
+delete from activitymember where groupID=#{groupID}and actName=#{actName}and fee=#{fee}and actor=#{actor}
+    </delete>
+
+    <select id="count" resultType="Integer">
+     select count(*)from activitymember where groupID=#{groupID} and actName=#{actName}
+    </select>
+
+</mapper>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>缴纳费用</title>
+    <link href="css(1)/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js(1)/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="css(1)/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!---->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+
+    <link href="css(1)/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css(1)/component.css" />
+    <!-- animation-effect -->
+    <link href="css(1)/animate.min.css" rel="stylesheet">
+    <script src="js(1)/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- //animation-effect -->
+    <script src="https://cdn.suoluomei.com/common/js/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.suoluomei.com/common/js2.0/vue/v2.5.16/vue.js"></script>
+    <link href="css/modal1.css" rel="stylesheet">
+    <link href="css/modal2.css" rel="stylesheet">
+    <link href="css/modal3.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top {
+            width: 100%;
+            height: 2rem;
+            background-color: white;
+            text-align: center;
+        }
+
+        .top p {
+            width: 100%;
+            font-size: 1.5rem;
+        }
+
+        body {
+            background-color: #F4F4F4;
+        }
+
+        .back {
+            background-color: white;
+            width: 96%;
+            border-radius: 10px;
+            margin-left: 2%;
+            margin-top: 2%;
+            padding-bottom: 2%;
+            padding-top: 2%;
+        }
+
+        .bechoice {
+            background: #46b0ed !important;
+            color: white !important;
+        }
+
+        .information {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .information span {
+            width: 95%;
+            font-size: 1.1rem;
+            margin-left: 2%;
+        }
+
+        .information input {
+            width: 95%;
+            border-radius: 7px;
+            height: 2rem;
+            text-align: center;
+            line-height: 2rem;
+            outline: none;
+            color: #46b0ed;
+            font-size: 1.1rem;
+            border: 2px solid;
+            margin-top: 2.5%;
+            margin-left: 2%;
+            margin-bottom: 2.5%;
+        }
+
+        .choice {
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .choice p {
+            font-size: 1.1rem;
+            margin-left: 2%;
+        }
+
+        .recharge_hurg ul {
+            flex-direction: row;
+            width: 100%;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
+        }
+
+        .recharge_hurg ul li {
+            list-style-type: none;
+            width: 29.5%;
+            margin-right: 2%;
+            border-radius: 0.5rem;
+            height: 2.5rem;
+            text-align: center;
+            line-height: 2.5rem;
+            margin-bottom: 1rem;
+            border: 2px #46b0ed solid;
+            color: #46b0ed;
+        }
+
+        .recharge_hurg ul li:nth-child(3n) {
+            margin-right: 0 !important;
+        }
+
+        .recharge_hurg_price {
+            width: 100%;
+            text-align: center;
+            margin: 1.25rem 0;
+        }
+
+        .recharge_hurg_price span {
+            color: #46b0ed;
+            font-weight: 600;
+            font-size: 23px;
+        }
+
+        .recharge_btn {
+            width: 96%;
+            background: #46b0ed;
+            color: white;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            line-height: 2.5rem;
+            font-size: 1.25rem;
+        }
+
+        .recharge_hurg ul input {
+            list-style-type: none;
+            width: 100%;
+            margin-right: 2%;
+            border-radius: 7px;
+            height: 35px;
+            text-align: center;
+            line-height: 40px;
+            border-style: none;
+            text-shadow: none;
+            -webkit-appearance: none;
+            box-shadow: none;
+            outline: none;
+            color: #46b0ed;
+            font-size: 1.1rem;
+        }
+
+        ::-webkit-input-placeholder {
+            /* WebKit, Blink, Edge */
+            color: #aaa;
+        }
+
+        :-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #aaa;
+            opacity: 1;
+        }
+
+        ::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #aaa;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+<div class="header head">
+    <div class="container">
+        <div class="logo animated wow pulse" data-wow-duration="1000ms" data-wow-delay="500ms">
+            <h1><a href="">拼团活动</a></h1>
+        </div>
+        <div class="nav-icon">
+            <a href="#" class="navicon"></a>
+            <div class="toggle">
+                <ul class="toggle-menu">
+                    <li><a  href="index.html">主页</a></li>
+                    <li><a  href="menu.html">Menu</a></li>
+                    <li><a   href="blog.html">Blog</a></li>
+                    <li><a class="active" href="typo.html">Codes</a></li>
+                    <li><a  href="events.html">Events</a></li>
+                    <li><a  href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <script>
+                $('.navicon').on('click', function (e) {
+                    e.preventDefault();
+                    $(this).toggleClass('navicon--active');
+                    $('.toggle').toggleClass('toggle--active');
+                });
+            </script>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- start search-->
+</div>
+<div class="container">
+    <div class="page">
+        <div class="menu-top">
+            <div class="col-md-4 menu-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <h3>缴纳团费</h3>
+                <label><i class="glyphicon glyphicon-menu-up"></i></label>
+                <span>Pay Tour Fee</span>
+            </div>
+            <div class="col-md-8 menu-right animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+            </div>
+        </div>
+    </div>
+    <div class="page-header"></div>
+    <div class="panel panel-success wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+        <div class="panel-heading">
+            <h3 class="panel-title">请输入以下信息并选择缴费</h3>
+        </div>
+        <div class="panel-body">
+            <div id="Vue">
+                <div style="margin-top: 50px" class="col-sm-12"></div>
+                <form class="form-horizontal" th:action="@{/tijiao}">
+                    <div>
+                        <div class="form-group"  >
+                            <div style="margin-top: 50px" class="col-sm-12"></div>
+
+                            <label class="col-sm-2 control-label">姓名</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="请输入活动名称" class="form-control" v-model="actor" name="actor" onkeyup="value=value.replace(/[\d]/g,'') "
+                                       oninput="if(value.length>30)value=value.substring(0,30)">
+                            </div>
+
+                            <div style="margin-top: 50px" class="col-sm-12"></div>
+
+                            <label class="col-sm-2 control-label">活动名称</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="请输入活动名称" class="form-control" v-model="actName" name="actName" onkeyup="value=value.replace(/[\d]/g,'') "
+                                       oninput="if(value.length>30)value=value.substring(0,30)">
+                            </div>
+
+                            <div style="margin-top: 50px" class="col-sm-12"></div>
+                            <label class="col-sm-2 control-label">团队编号</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="请输入团队编号" class="form-control" v-model="phone" name="groupID"
+                                       onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                       oninput="if(value.length>11)value=value.substring(0,11)">
+                            </div>
+
+                            <div style="margin-top: 50px" class="col-sm-12"></div>
+
+                            <label class="col-sm-2 control-label">请输入团费</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="请输入团费" class="form-control" v-model="number" name="money" >
+                            </div>
+                            <div class="col-md-12" style="margin-top: 20px"></div>
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-info">提交</button>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page"></div>
+<div class="footer">
+    <div class="container">
+        <div class="footer-head">
+            <div class="col-md-8 footer-top animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <ul class=" in">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a  href="">Menu</a></li>
+                    <li><a  href="">Blog</a></li>
+                    <li><a  href="">Events</a></li>
+                    <li><a  href="">Contact</a></li>
+                </ul>
+                <span>There are many variations of passages</span>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#Vue",
+        data: {
+            ko: "",
+            question: "",
+            status: 0,
+            thePrice: 10,
+            confirm: "",
+            name: "",
+            phone: "",
+            card: "",
+            list: [
+                { price: 10 },
+                { price: 20 },
+                { price: 30 },
+                { price: 50 },
+                { price: 100 },
+                { price: 300 },
+                { price: 500 },
+                { price: 1000 },
+            ],
+
+        },
+        watch: {
+            // 如果 `question` 发生改变，这个函数就会运行
+            question: function (newQuestion, oldQuestion) {
+                //如果第一位数为0时
+                if (this.question[0] == "0") {
+                    console.log(this.question[0])
+                    this.question = ""
+                    this.thePrice = 0
+                }
+                //如果question为空时
+                if (this.question == "") {
+                    this.thePrice = 0
+                }
+                else {
+                    this.thePrice = this.question
+                    this.question = this.question.replace(/\D/g, '')
+                }
+            },
+            // 如果 `name` 发生改变，这个函数就会运行
+            name: function (newName, oldName) {
+                if (this.name[0] == "0") {
+                    this.name = ""
+                    console.log(1)
+                }
+            },
+            // 如果 `phone` 发生改变，这个函数就会运行
+            phone: function (newPhone, oldPhone) {
+                //如果第一位数为0时
+                if (this.phone[0] == "0") {
+                    this.phone = ""
+                }
+                this.phone = this.phone.replace(/\D/g, '')
+                console.log(1)
+            },
+        },
+        methods: {
+            choicePrice(index, price) {
+                this.status = index
+                this.thePrice = price
+            },
+            choiceother() {
+                this.status = null
+                //当`question`为空时
+                if (this.question == "") {
+                    this.thePrice = 0
+                }
+            },
+            wxpaly() {
+                // console.log(this.confirm = parseInt(this.thePrice))
+                if (this.name == "" || this.phone == "") {
+                    alert("请填写空余信息")
+                } else {
+                    console.log(this.name)
+                    console.log(this.phone)
+                    console.log(this.confirm = parseInt(this.thePrice))
+                    alert("姓名：" + this.name + "\n" + "团队编号：" + this.phone + "\n" + "\n" + "你要缴费的金额为：" + this.confirm)
+                }
+
+
+            },
+            input() {
+
+            }
+        },
+        created() {
+
+        }
+    })
+</script>
+<script>
+    $(document).ready(function () {
+
+    });
+</script>
+</html>

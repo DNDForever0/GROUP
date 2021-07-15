@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>创建团队</title>
+    <link href="/css(1)/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js(1)/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <!--theme-style-->
+    <link href="/css(1)/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!---->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+
+    <link href="/css(1)/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css(1)/component.css" />
+    <!-- animation-effect -->
+    <link href="/css(1)/animate.min.css" rel="stylesheet">
+    <script src="/js(1)/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- //animation-effect -->
+    <link href="css/modal1.css" rel="stylesheet">
+    <link href="css/modal2.css" rel="stylesheet">
+    <link href="css/modal3.css" rel="stylesheet">
+</head>
+<body>
+<div class="header head">
+    <div class="container">
+        <div class="logo animated wow pulse" data-wow-duration="1000ms" data-wow-delay="500ms">
+            <h1><a href="">拼团活动</a></h1>
+        </div>
+        <div class="nav-icon">
+            <a href="#" class="navicon"></a>
+            <div class="toggle">
+                <ul class="toggle-menu">
+                    <li><a  href="index.html">主页</a></li>
+                    <li><a  href="menu.html">Menu</a></li>
+                    <li><a   href="blog.html">Blog</a></li>
+                    <li><a class="active" href="typo.html">Codes</a></li>
+                    <li><a  href="events.html">Events</a></li>
+                    <li><a  href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <script>
+                $('.navicon').on('click', function (e) {
+                    e.preventDefault();
+                    $(this).toggleClass('navicon--active');
+                    $('.toggle').toggleClass('toggle--active');
+                });
+            </script>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <!-- start search-->
+</div>
+<div class="container wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms" >
+    <div class="page">
+        <div class="menu-top">
+            <div class="col-md-4 menu-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <h3>创建团队</h3>
+                <label><i class="glyphicon glyphicon-menu-up"></i></label>
+                <span>Create A Group</span>
+            </div>
+        </div>
+    </div>
+    <p style="color:red;text-align: center;font-size: 30px" th:text="${msg3}"  th:if="${not #strings.isEmpty(msg3)}"></p>
+
+    <div class="page-header"></div>
+    <div class="bs-example" data-example-id="simple-horizontal-form" >
+        <form class="form-horizontal" th:action="@{/change}" >
+
+            <input type="hidden" name="groupId">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">团队名称</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="groupName" id="inputEmail3" placeholder="团队名称" required>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 20px"></div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">团队最大人数</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="inputPassword" name="maxNumber" placeholder="团队最大人数" required>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 20px"></div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">活动开始时间</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail" name="startTime" placeholder="活动开始时间" required>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 20px"></div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">活动结束时间</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmai6" name="endTime" placeholder="活动结束时间"required>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 20px"></div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-info" style="margin-left: 30px">创建</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12" style="margin-top: 80px"></div>
+</div>
+
+
+<div class="footer">
+    <div class="container">
+        <div class="footer-head">
+            <div class="col-md-8 footer-top animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <ul class=" in">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a  href="">Menu</a></li>
+                    <li><a  href="">Blog</a></li>
+                    <li><a  href="">Events</a></li>
+                    <li><a  href="">Contact</a></li>
+                </ul>
+                <span>There are many variations of passages</span>
+            </div>
+            <div class="clearfix"> </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

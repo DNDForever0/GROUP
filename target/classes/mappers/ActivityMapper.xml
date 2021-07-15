@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.ActivityMapper">
+    <select id="queryActivityList" resultType="Activity">
+    select * from activity
+  </select>
+    <select id="queryActivityListById" resultType="Activity">
+    select * from activity where groupID=#{groupID}
+  </select>
+
+    <insert id="addActivity" parameterType="Activity">
+insert into activity(groupID,actName,fee,activityID)values(#{groupID},#{actName},#{fee},#{activityID})
+    </insert>
+    <delete id="deleteActivity" parameterType="Activity" >
+        delete from activity where groupID=#{groupID}and actName=#{actName}
+    </delete>
+
+    <delete id="deleteActivityByID"  >
+        delete from activity where activityID=#{activityID}
+    </delete>
+    <update id="changeActivity" parameterType="Activity">
+        update activity set fee=#{fee} ,actName=#{actName} ,groupID=#{groupID}where activityID=#{activityID}
+    </update>
+    <select id="selectActivity" resultType="Activity">
+        select *from activity where activityID=#{activityID}
+    </select>
+
+
+</mapper>

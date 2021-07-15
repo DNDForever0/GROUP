@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.TourFeeMapper">
+    <select id="queryTourFeeList" resultType="TourFee">
+    select * from tourfee
+  </select>
+    <insert id="addTourFee" parameterType="TourFee">
+        insert into tourfee(groupID,actName,consumption,actor,balance,paid)values(#{groupID},#{actName},#{consumption},#{actor},#{balance},#{paid})
+    </insert>
+    <delete id="deleteTourFee" parameterType="TourFee">
+        delete from tourfee where groupID=#{groupID} and actName=#{actName}
+    </delete>
+
+    <update id="updateTourFee" parameterType="TourFee">
+
+       update tourfee set paid=#{paid} where groupID=#{groupID} and actName=#{actName} and actor=#{actor}
+    </update>
+
+
+
+
+</mapper>

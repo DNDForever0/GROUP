@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" >
+<title>登录</title>
+
+<link rel="stylesheet" th:href="@{/css/font-awesome-4.7.0/css/font-awesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div class="materialContainer">
+	<form class="fa-sign-in" th:action="@{/user/login}">
+	<div class="box">
+		<div class="title"  >拼团活动登录界面</div>
+		<p style="color:red;text-align: center" th:text="${msg}"  th:if="${not #strings.isEmpty(msg)}"></p>
+		<p style="color: red;text-align: center" th:text="${msg1}"  th:if="${not #strings.isEmpty(msg1)}"></p>
+		<p style="color: red;text-align: center" th:text="${msg2}"  th:if="${not #strings.isEmpty(msg2)}"></p>
+		<p style="color: red;text-align: center" th:text="${sss}"  th:if="${not #strings.isEmpty(sss)}"></p>
+		<div class="input">
+			<label for="name" >用户名</label>
+			<input type="text" name="username" id="name" required>
+			<span class="spin"></span>
+		</div>
+		<div class="input">
+			<label for="pass">密码</label>
+			<input type="password" name="password" id="pass" required>
+			<span class="spin"></span>
+		</div>
+		<div class="button login" >
+			<button type="submit">
+				登录
+				<i class="fa fa-check"></i>
+			</button>
+		</div>
+		<a th:href="@{javascript:}" class="pass-forgot">忘记密码？</a>
+	</div>
+	</form>
+	<form class="fa-sign-in" th:action="@{/user/register}">
+	<div class="overbox">
+		<div class="material-button alt-2">
+			<span class="shape"></span>
+		</div>
+		<div class="title">注册</div>
+
+		<div class="input">
+			<label for="regname">用户名</label>
+			<input type="text" name="regname" id="regname" required>
+		</div>
+		<div class="input">
+			<label for="email">email</label>
+			<input type="text" name="email" id="email" required>
+		</div>
+		<div class="input">
+			<label for="regpass">密码</label>
+			<input type="password" name="regpass" id="regpass" required>
+		</div>
+		<div class="input">
+			<label for="reregpass">确认密码</label>
+			<input type="password" name="reregpass" id="reregpass" required>
+		</div>
+		<div class="button">
+			<button type="submit">
+				<span>注册</span>
+			</button>
+		</div>
+	</div>
+	</form>
+
+</div>
+
+<script th:src="@{js/jquery.min.js}"></script>
+<script th:src="@{js/index.js}"></script>
+
+</body>
+</html>
